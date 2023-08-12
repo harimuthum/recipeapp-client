@@ -10,7 +10,7 @@ const SavedRecipes = () => {
     const fetchSavedRecipes = async () => {
       const userID = useGetUserID();
       await Axios.get(
-        `http://localhost:5000/api/recipes/saved-recipes/${userID}`
+        `${import.meta.env.VITE_SERVER_RECIPE}/saved-recipes/${userID}`
       )
         .catch((e) => console.log(e.message))
         .then((res) => {

@@ -40,11 +40,10 @@ const Register = () => {
       return;
     }
 
-    Axios.post("http://localhost:5000/api/auth/register", {
+    Axios.post(import.meta.env.VITE_SERVER_AUTH + "/register", {
       username,
       password,
     })
-      .catch((err) => console.log(err))
       .then((res) => {
         setUsername("");
         setPassword("");
@@ -56,7 +55,8 @@ const Register = () => {
             behavior: "smooth",
           });
         }, 2000);
-      });
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

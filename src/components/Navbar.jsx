@@ -23,11 +23,12 @@ const Navbar = () => {
     window.localStorage.removeItem("userID");
     window.localStorage.removeItem("imageURL");
     navigate("/");
+    window.location.reload();
     //Scroll to login section
   };
 
   const updateProfile = async () => {
-    await Axios.put("http://localhost:5000/api/auth/update-dp", {
+    await Axios.put(`${import.meta.env.VITE_SERVER_AUTH}/update-dp`, {
       userID: userID,
       profileDP: imageURL,
     })

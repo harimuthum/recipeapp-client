@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      await Axios.get("http://localhost:5000/api/recipes")
+      await Axios.get(`${import.meta.env.VITE_SERVER_RECIPE}`)
         .catch((err) => console.log(err.message))
         .then((res) => setRecipes(res.data));
 
@@ -27,7 +27,7 @@ const Home = () => {
     const fetchSavedRecipes = async () => {
       const userID = useGetUserID();
       await Axios.get(
-        `http://localhost:5000/api/recipes/saved-recipes/ids/${userID}`
+        `${import.meta.env.VITE_SERVER_RECIPE}/saved-recipes/ids/${userID}`
       )
         .catch((e) => console.log(e.message))
         .then((res) => {
@@ -61,7 +61,7 @@ const Home = () => {
       setTimeout(() => navigate("/auth"), 3000);
     } else {
       await Axios.put(
-        "http://localhost:5000/api/recipes",
+        `${import.meta.env.VITE_SERVER_RECIPE}`,
         { recipeID, userID },
         { headers: { authorization: cookies.access_token } }
       )

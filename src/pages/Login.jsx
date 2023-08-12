@@ -44,7 +44,7 @@ const Login = () => {
       return;
     }
 
-    await Axios.post("http://localhost:5000/api/auth/login", {
+    await Axios.post(`${import.meta.env.VITE_SERVER_AUTH}/login`, {
       username,
       password,
     })

@@ -64,7 +64,7 @@ const CreateRecipe = () => {
     e.preventDefault();
     console.log(recipe);
 
-    await Axios.post("http://localhost:5000/api/recipes", recipe, {
+    await Axios.post(import.meta.env.VITE_SERVER_RECIPE, recipe, {
       headers: { authorization: cookies.access_token },
     })
       .catch((err) => console.log(err))
