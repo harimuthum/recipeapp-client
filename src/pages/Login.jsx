@@ -48,7 +48,6 @@ const Login = () => {
       username,
       password,
     })
-      .catch((err) => console.log(err.response.data.message))
       .then((res) => {
         notify("Logged in successfully!");
         console.log(res);
@@ -58,6 +57,10 @@ const Login = () => {
         setTimeout(() => {
           navigate("/");
         }, 2000);
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+        notifyError(err.response.data.message);
       });
   };
 
