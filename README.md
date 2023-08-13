@@ -1,8 +1,6 @@
-# React + Vite
+# Recipe App - MERN App
+Techs Used -  ReactJS | ExpressJS | MongoDB | TailwindCSS | JWT Authentication
+       A Blog Application in which we can view blogs created by users around this platform. A User can create a recipe blog, save a recipe blog for a quick view and update a profile image. This app uses JWT as an access token for Login Session by a user.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Server - https://github.com/harimuthum/recipeapp-server
+Deployed App - https://imaginative-biscotti-349284.netlify.app
